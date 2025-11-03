@@ -39,6 +39,12 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     margin-right: 25px;
     opacity: 65%;
+    transition: opacity 0.3s ease;
+}
+
+.navbar-toggler:hover,
+.navbar-toggler:focus{
+    opacity: 1;
 }
 
 .navbar-toggler-icon{
