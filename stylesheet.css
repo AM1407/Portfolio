@@ -108,3 +108,53 @@ body {
   background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
   z-index: -1;
 }
+
+.foldout {
+  background: linear-gradient(-135deg, #0a1725, #141414, #000);
+  color: #e8f0ff; /* slightly bluish-white for better contrast */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* fix Bootstrap’s internal padding */
+.offcanvas-body {
+  padding-top: 0.5rem !important;
+}
+
+/* NAV LINKS */
+.foldout .nav-link {
+  color: #cfe4ff;          /* brighter light-blue for readability */
+  font-size: 1.15rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.foldout .nav-link:hover {
+  color: #66b2ff;
+  text-shadow: 0 0 8px rgba(102, 178, 255, 0.6);
+}
+
+/* LOGO AT BOTTOM */
+.foldout-logo {
+  text-align: center;
+  margin-top: auto;
+  padding-bottom: 1.2rem;
+}
+
+.logo-bottom {
+  width: 130px;           /* slightly larger now */
+  opacity: 0.7;
+  filter: grayscale(100%) brightness(0.9);
+  transition: all 0.3s ease;
+}
+
+.logo-bottom:hover {
+  opacity: 1;
+  filter: grayscale(0%) brightness(1.1) drop-shadow(0 0 10px #66b2ff);
+  transform: scale(1.1);
+}
