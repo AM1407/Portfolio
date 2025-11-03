@@ -1,5 +1,17 @@
-body{
+/* body{
     background: radial-gradient(circle,rgba(87, 77, 77, 1) 0%, rgba(0, 0, 0, 1) 100%);
+} */
+
+@keyframes gradient {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+body {
+  background: linear-gradient(-45deg, #1e1e1e, #2c2c2c, #1a1a1a, #000);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
 }
 
 .logo{
@@ -31,9 +43,18 @@ body{
     color: white;
 }
 
-.navbar-brand{
+.Welcome{
+    font-size: 45px;
     color: white;
-    opacity: 75%;
-    font-size: 50px;
-    font-weight: 500;
+    opacity: 65%;
+}
+
+.hero{
+    display: flex;
+    justify-content: center;
+    margin-top: 250px;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    opacity: 80%;
 }
