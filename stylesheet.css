@@ -49,6 +49,13 @@ body {
 
 .navbar-toggler-icon{
     color: white;
+    opacity: 60%;
+}
+
+.offcanvas-header {
+  background-color: #201f1f; /* darker shade of your top gradient blue */
+  color: #e0e0e0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .Welcome{
