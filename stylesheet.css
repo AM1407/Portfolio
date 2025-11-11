@@ -1,7 +1,9 @@
-/* body{
-    background: radial-gradient(circle,rgba(87, 77, 77, 1) 0%, rgba(0, 0, 0, 1) 100%);
-} */
+/* --- ACCENT COLOR VARIABLE --- */
+:root {
+    --cyber-blue: #3A98FF; /* Sharp, professional blue */
+}
 
+/* --- BODY & ANIMATION --- */
 @keyframes gradient {
   0% {background-position: 0% 50%;}
   50% {background-position: 100% 50%;}
@@ -12,18 +14,16 @@ body {
   background: linear-gradient(-45deg, #1e1e1e, #2c2c2c, #1a1a1a, #000);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
+  min-height: 100vh; 
+  
+  /* Subtle dot grid for technical feel */
+  background-image: 
+    radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), 
+    linear-gradient(-45deg, #1e1e1e, #2c2c2c, #1a1a1a, #000);
+  background-size: 20px 20px, 400% 400%;
 }
 
-.logo{
-    display: flex;
-    width: auto;
-    height: 75px;
-    /* margin-left: 25px; */
-    zoom: 90%;
-    margin-top: 5px;
-    justify-content: center;
-}
-
+/* --- NAVBAR FIXES --- */
 .navbar{
   background-color: #111;
   box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
@@ -31,43 +31,42 @@ body {
   padding: 0;
 }
 
-
-.navbar-toggler{
-    background-color: #fff;
-    color: #000;
-    border: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    margin-right: 25px;
-    opacity: 65%;
-    transition: opacity 0.3s ease;
+.logo{
+    width: auto;
+    height: 75px;
+    zoom: 90%;
+    margin-top: 5px;
+    margin-right: 25px; 
 }
 
-.navbar-toggler:hover,
-.navbar-toggler:focus{
-    opacity: 1;
-}
-
-.navbar-toggler-icon{
-    color: white;
-    opacity: 60%;
-}
-
-.offcanvas-header {
-  background-color: #201f1f; /* darker shade of your top gradient blue */
-  color: #e0e0e0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+.logo:hover {
+    /* Logo glow on hover */
+    filter: drop-shadow(0 0 8px rgba(58, 152, 255, 0.5));
+    transition: filter 0.3s ease;
 }
 
 .Welcome{
     font-size: 30px;
     color: white;
     opacity: 65%;
+    /* Style the shield icon */
+    .fas {
+        color: var(--cyber-blue);
+        margin-right: 10px;
+    }
+}
+
+/* --- CONTENT POSITIONING & HERO --- */
+#content-wrap {
+    margin-top: 90px; 
 }
 
 .hero{
     display: flex;
+    flex-direction: column; /* Allows vertical stacking of text and scroll icon */
     justify-content: center;
-    margin-top: 250px;
+    align-items: center; 
+    min-height: calc(100vh - 90px); 
     color: white;
     font-size: large;
     font-weight: bold;
@@ -76,23 +75,63 @@ body {
 }
 
 .hero h1 {
-  text-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+  /* Updated glow color to Cyber Blue */
+  text-shadow: 0 0 15px rgba(58, 152, 255, 0.25); 
 }
 
 .typing {
   font-size: 1.3rem;
-  color: #d1d1d1;
-  border-right: 2px solid #d1d1d1;
+  color: var(--cyber-blue); /* Cyber Blue text color */
+  border-right: 2px solid var(--cyber-blue); /* Cyber Blue cursor color */
   white-space: nowrap;
   overflow: hidden;
   width: 0;
   animation: typing 4s steps(40, end) forwards, blink 1s step-end infinite alternate;
+  text-shadow: 0 0 8px rgba(58, 152, 255, 0.5); /* Cyber Blue glow */
 }
+
+/* --- SCROLL DOWN INDICATOR --- */
+.scroll-down-mouse {
+  position: absolute;
+  bottom: 25px; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 45px;
+  border: 2px solid var(--cyber-blue); /* Cyber Blue border */
+  border-radius: 20px;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+.scroll-down-mouse:hover {
+    opacity: 1;
+}
+
+/* The inner "mouse wheel" */
+.scroll-down-mouse span {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 8px;
+  background: var(--cyber-blue); /* Cyber Blue color */
+  border-radius: 4px;
+  animation: scrollWheel 1.5s ease-in-out infinite;
+}
+
+/* Animation for the "wheel" */
+@keyframes scrollWheel {
+  0% { top: 8px; opacity: 1; }
+  100% { top: 24px; opacity: 0; }
+}
+
+/* (Include all other @keyframes and section styles here) */
 
 /* Typing animation (controls how text appears) */
 @keyframes typing {
   from { width: 0; }
-  to { width: 28ch; } /* adjust this to match your text length */
+  to { width: 28ch; } 
 }
 
 /* Blinking cursor animation */
@@ -103,65 +142,4 @@ body {
 @keyframes fadeIn {
   to { opacity: 1; }
 }
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  height: 80%;
-  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-  z-index: -1;
-}
-
-.foldout {
-  background: linear-gradient(-135deg, #0a1725, #141414, #000);
-  color: #e8f0ff; /* slightly bluish-white for better contrast */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
-/* fix Bootstrap’s internal padding */
-.offcanvas-body {
-  padding-top: 0.5rem !important;
-}
-
-/* NAV LINKS */
-.foldout .nav-link {
-  color: #cfe4ff;          /* brighter light-blue for readability */
-  font-size: 1.15rem;
-  font-weight: 400;
-  letter-spacing: 0.5px;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-.foldout .nav-link:hover {
-  color: #66b2ff;
-  text-shadow: 0 0 8px rgba(102, 178, 255, 0.6);
-}
-
-/* LOGO AT BOTTOM */
-.foldout-logo {
-  text-align: center;
-  margin-top: auto;
-  padding-bottom: 1.2rem;
-}
-
-.logo-bottom {
-  width: 130px;           /* slightly larger now */
-  opacity: 0.7;
-  filter: grayscale(100%) brightness(0.9);
-  transition: all 0.3s ease;
-}
-
-.logo-bottom:hover {
-  opacity: 1;
-  filter: grayscale(0%) brightness(1.1) drop-shadow(0 0 10px #66b2ff);
-  transform: scale(1.1);
-}
+/* ... (Ensure all your other @keyframes and section styles are present below this line) ... */
