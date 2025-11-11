@@ -31,9 +31,14 @@ body {
   padding: 0;
 }
 
+.logo-placeholder{
+  width: 150px;
+  height: 1px;
+}
+
 .logo{
     width: auto;
-    height: 75px;
+    height: 85px;
     zoom: 90%;
     margin-top: 5px;
     margin-right: 25px; 
@@ -58,7 +63,7 @@ body {
 
 /* --- CONTENT POSITIONING & HERO --- */
 #content-wrap {
-    margin-top: 90px; 
+    margin-top: 130px; 
 }
 
 .hero{
@@ -66,7 +71,7 @@ body {
     flex-direction: column; /* Allows vertical stacking of text and scroll icon */
     justify-content: center;
     align-items: center; 
-    min-height: calc(100vh - 90px); 
+    min-height: calc(100vh - 130px); 
     color: white;
     font-size: large;
     font-weight: bold;
