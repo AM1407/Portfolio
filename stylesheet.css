@@ -148,3 +148,16 @@ body {
   to { opacity: 1; }
 }
 /* ... (Ensure all your other @keyframes and section styles are present below this line) ... */
+
+.githubLogo,
+.linkedinLogo{
+    font-size: 35px;
+    margin-right: 15px;
+    color: #b3b3b3;
+}
+
+.githubLogo:hover,
+.linkedinLogo:hover{
+    color: var(--cyber-blue);
+    transform: scale(1.2);
+}
