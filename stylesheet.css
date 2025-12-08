@@ -3,6 +3,28 @@
     --cyber-blue: #3A98FF; /* Sharp, professional blue */
 }
 
+/* 1. Set the scrolling behavior on the whole page */
+html {
+    /* Enforces the snap behavior on the Y (vertical) axis */
+    scroll-snap-type: y mandatory;
+
+    /* Makes anchor links (like your mouse icon) scroll smoothly */
+    scroll-behavior: smooth;
+}
+
+/* 2. Make every section take up the full screen */
+section {
+    /* This ensures every section is exactly the height of the screen */
+    height: 100vh;
+    width: 100%;
+
+    /* This tells the browser: "Stop scrolling here" */
+    scroll-snap-align: start;
+
+    /* Optional: keeps content centered if you resize window */
+    position: relative;
+}
+
 /* --- BODY & ANIMATION --- */
 @keyframes gradient {
   0% {background-position: 0% 50%;}
@@ -160,4 +182,40 @@ body {
 .linkedinLogo:hover{
     color: var(--cyber-blue);
     transform: scale(1.2);
+}
+
+.about-section{
+    max-width: 100%;
+}
+
+.about-text{
+    max-width: 600px;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 1s ease-out;
+}
+
+.inAboutName{
+    color: var(--cyber-blue);
+}
+
+.about-photo{
+    filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.9));
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 1s ease-out;
+}
+
+.inAboutKeywords{
+    color: var(--cyber-blue);
+}
+
+.inAboutQualities{
+    color: var(--cyber-blue);
+}
+
+.visible .about-text,
+.visible .about-image {
+    opacity: 1;
+    transform: translateX(0);
 }
