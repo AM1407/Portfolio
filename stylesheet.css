@@ -1,17 +1,14 @@
-/* --- ACCENT COLOR VARIABLE --- */
 :root {
-    --cyber-blue: #3A98FF; /* Sharp, professional blue */
+
+    --cyber-blue: #3A98FF;
+
 }
 
-/* 1. Set the scrolling behavior on the whole page */
 html {
-    /* Enforces the snap behavior on the Y (vertical) axis */
     scroll-snap-type: y mandatory;
 }
 
-/* 2. Make every section take up the full screen */
 section {
-    /* This ensures every section is exactly the height of the screen */
     min-height: 100vh;
     width: 100%;
     scroll-snap-align: start;
@@ -23,36 +20,36 @@ section {
 }
 
 /* --- BODY & ANIMATION --- */
+
 @keyframes gradient {
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
 }
 
 body {
-  background: linear-gradient(-45deg, #1e1e1e, #2c2c2c, #1a1a1a, #000);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+    background: linear-gradient(-45deg, #1e1e1e, #2c2c2c, #1a1a1a, #000);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
     margin: 0;
-  
-  /* Subtle dot grid for technical feel */
-  background-image: 
-    radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), 
-    linear-gradient(-45deg, #1e1e1e, #2c2c2c, #1a1a1a, #000);
-  background-size: 20px 20px, 400% 400%;
+    background-image:
+            radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(-45deg, #1e1e1e, #2c2c2c, #1a1a1a, #000);
+    background-size: 20px 20px, 400% 400%;
 }
 
-/* --- NAVBAR FIXES --- */
+/* --- NAVBAR --- */
+
 .navbar{
-  background-color: #111;
-  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
-  margin: 0;
-  padding: 0;
+    background-color: #111;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    margin: 0;
+    padding: 0;
 }
 
 .logo-placeholder{
-  width: 150px;
-  height: 1px;
+    width: 150px;
+    height: 1px;
 }
 
 .logo{
@@ -60,11 +57,10 @@ body {
     height: 85px;
     zoom: 90%;
     margin-top: 5px;
-    margin-right: 25px; 
+    margin-right: 25px;
 }
 
 .logo:hover {
-    /* Logo glow on hover */
     filter: drop-shadow(0 0 8px rgba(58, 152, 255, 0.5));
     transition: filter 0.3s ease;
 }
@@ -73,7 +69,7 @@ body {
     font-size: 30px;
     color: white;
     opacity: 65%;
-    /* Style the shield icon */
+
     .fas {
         color: var(--cyber-blue);
         margin-right: 10px;
@@ -81,16 +77,17 @@ body {
 }
 
 /* --- CONTENT POSITIONING & HERO --- */
+
 #content-wrap {
     margin-top: 0;
 }
 
 .hero{
     display: flex;
-    flex-direction: column; /* Allows vertical stacking of text and scroll icon */
+    flex-direction: column;
     justify-content: center;
-    align-items: center; 
-    min-height: calc(100vh - 130px); 
+    align-items: center;
+    min-height: calc(100vh - 130px);
     color: white;
     font-size: large;
     font-weight: bold;
@@ -100,94 +97,85 @@ body {
 }
 
 .hero h1 {
-  /* Updated glow color to Cyber Blue */
-  text-shadow: 0 0 15px rgba(58, 152, 255, 0.25); 
+    text-shadow: 0 0 15px rgba(58, 152, 255, 0.25);
 }
 
 .typing {
-  font-size: 1.3rem;
-  color: var(--cyber-blue); /* Cyber Blue text color */
-  border-right: 2px solid var(--cyber-blue); /* Cyber Blue cursor color */
-  white-space: nowrap;
-  overflow: hidden;
-  width: 0;
-  animation: typing 4s steps(40, end) forwards, blink 1s step-end infinite alternate;
-  text-shadow: 0 0 8px rgba(58, 152, 255, 0.5); /* Cyber Blue glow */
+    font-size: 1.3rem;
+    color: var(--cyber-blue);
+    border-right: 2px solid var(--cyber-blue);
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 4s steps(40, end) forwards, blink 1s step-end infinite alternate;
+    text-shadow: 0 0 8px rgba(58, 152, 255, 0.5);
 }
 
-/* --- SCROLL DOWN INDICATOR --- */
 .scroll-down-mouse {
-  position: absolute;
-  bottom: -55px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 28px;
-  height: 45px;
-  border: 2px solid var(--cyber-blue); /* Cyber Blue border */
-  border-radius: 20px;
-  opacity: 0.7;
-  transition: opacity 0.3s;
+    position: absolute;
+    bottom: -55px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 28px;
+    height: 45px;
+    border: 2px solid var(--cyber-blue);
+    border-radius: 20px;
+    opacity: 0.7;
+    transition: opacity 0.3s;
 }
+
 .scroll-down-mouse:hover {
     opacity: 1;
 }
 
-/* The inner "mouse wheel" */
 .scroll-down-mouse span {
-  position: absolute;
-  top: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 4px;
-  height: 8px;
-  background: var(--cyber-blue); /* Cyber Blue color */
-  border-radius: 4px;
-  animation: scrollWheel 1.5s ease-in-out infinite;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 8px;
+    background: var(--cyber-blue);
+    border-radius: 4px;
+    animation: scrollWheel 1.5s ease-in-out infinite;
 }
 
-/* Animation for the "wheel" */
 @keyframes scrollWheel {
-  0% { top: 8px; opacity: 1; }
-  100% { top: 24px; opacity: 0; }
+
+    0% { top: 8px; opacity: 1; }
+    100% { top: 24px; opacity: 0; }
 }
 
-/* (Include all other @keyframes and section styles here) */
-
-/* Typing animation (controls how text appears) */
 @keyframes typing {
-  from { width: 0; }
-  to { width: 28ch; } 
+    from { width: 0; }
+    to { width: 28ch; }
 }
 
-/* Blinking cursor animation */
 @keyframes blink {
-  50% { border-color: transparent; }
+    50% { border-color: transparent; }
 }
 
 @keyframes fadeIn {
-  to { opacity: 1; }
+    to { opacity: 1; }
 }
-/* ... (Ensure all your other @keyframes and section styles are present below this line) ... */
 
 .githubLogo,
 .linkedinLogo{
     font-size: 35px;
     margin-right: 15px;
-    /* REMOVED color here because it needs to be on the 'a' tag */
 }
 
-/* TARGET THE LINK DIRECTLY */
 .githubLogo a,
 .linkedinLogo a {
     color: white;
     opacity: 65%;
     transition: all 0.3s ease;
-    display: inline-block; /* Fixes scaling smoothness */
+    display: inline-block;
 }
 
 .githubLogo a:hover,
 .linkedinLogo a:hover{
-    color: var(--cyber-blue); /* Blue only on hover */
+    color: var(--cyber-blue);
     transform: scale(1.2);
 }
 
@@ -240,30 +228,28 @@ body {
 
 .scroll-nav {
     position: fixed;
-    right: 2rem;       /* Distance from right edge */
-    top: 50%;          /* Center vertically */
+    right: 2rem;
+    top: 50%;
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;       /* Space between dots */
-    z-index: 1000;     /* Ensures it sits on top of everything */
+    gap: 1.5rem;
+    z-index: 1000;
 }
 
 .dot {
     width: 12px;
     height: 12px;
     background-color: transparent;
-    border: 2px solid #b3b3b3; /* Empty circle by default */
+    border: 2px solid #b3b3b3;
     border-radius: 50%;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
-/* Hover state */
 .dot:hover {
     background-color: #b3b3b3;
 }
-
 
 .dot.active {
     background-color: var(--cyber-blue);
@@ -271,12 +257,8 @@ body {
     transform: scale(1.2);
 }
 
-
-/* --- UPDATED PROJECT CARD STYLES (SQUARE LOOK) --- */
-
 .projects-grid {
     display: grid;
-    /* Keeps cards nice and wide/boxy */
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
     padding: 1rem;
@@ -284,15 +266,10 @@ body {
 
 .projects-section {
     background-color: #0d0d0d;
-
-    /* 1. Push content down so it clears the Navbar */
     padding-top: 150px;
-
-    /* 2. Ensure the section allows scrolling if content is tall */
     overflow-y: auto;
 }
 
-/* 1. The Container */
 .project-card {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid #333;
@@ -302,7 +279,6 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
-    /* Optional: Sets a minimum height to force a vertical rectangle shape */
     min-height: 500px;
 }
 
@@ -312,32 +288,28 @@ body {
     box-shadow: 0 5px 15px rgba(58, 152, 255, 0.15);
 }
 
-/* 2. The Image Area (The Key Change) */
 .card-image {
     width: 100%;
-    /* Increased from 180px to 250px for a "Monitor" aspect ratio */
     height: 250px;
     overflow: hidden;
     border-bottom: 1px solid #333;
-    background-color: #000; /* Fallback if image has transparency */
+    background-color: #000;
 }
 
 .card-image img {
     width: 100%;
     height: 100%;
-    /* 'cover' fills the box. */
     object-fit: cover;
-    /* 'top' ensures we see the Header/Nav of your screenshot, not the middle */
     object-position: top center;
     transition: transform 0.5s ease;
 }
 
-/* Zoom effect on hover */
 .project-card:hover .card-image img {
     transform: scale(1.05);
 }
 
 /* 3. The Text Area */
+
 .card-content {
     padding: 1.5rem;
     display: flex;
@@ -361,19 +333,17 @@ body {
     flex-grow: 1;
 }
 
-/* 4. The Buttons Container */
 .card-actions {
     display: flex;
     gap: 1rem;
     margin-top: auto;
     padding-top: 1rem;
-    border-top: 1px solid rgba(255,255,255,0.05); /* Subtle separator line */
+    border-top: 1px solid rgba(255,255,255,0.05);
 }
 
-/* Shared Button Styles */
 .project-btn {
     text-decoration: none;
-    padding: 10px 20px; /* Bigger touch target */
+    padding: 10px 20px;
     border-radius: 8px;
     font-size: 1.1rem;
     font-weight: 600;
@@ -382,20 +352,13 @@ body {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    flex: 1; /* Makes buttons equal width */
+    flex: 1;
 }
 
-/* "Live Demo" Button Style */
 .live-btn {
     background-color: transparent;
-
-    /* 1. We use RGBA to handle the "White with 65% opacity" in one go */
     color: rgba(255, 255, 255, 0.65) !important;
-
-    /* 2. 'currentColor' makes the border automatically match the text color above */
     border: 1px solid currentColor;
-
-    /* Layout styling */
     text-decoration: none;
     padding: 8px 16px;
     border-radius: 6px;
@@ -405,18 +368,11 @@ body {
 
 .live-btn:hover {
     color: var(--cyber-blue) !important;
-
-    /* 4. Make it fully bright (100% opacity) */
     opacity: 1;
-
-    /* Add a subtle glow for that cyber feel */
     box-shadow: 0 0 15px rgba(58, 152, 255, 0.4);
-
-    /* Ensure background stays clear */
     background-color: transparent;
 }
 
-    /* NEW - Triggers only on the image itself */
 .logo:hover {
     transform: scale(1.1);
     filter: drop-shadow(0 0 15px rgba(58, 152, 255, 0.8));
@@ -424,14 +380,8 @@ body {
 
 .repo-btn {
     background-color: transparent;
-
-    /* 1. We use RGBA to handle the "White with 65% opacity" in one go */
     color: rgba(255, 255, 255, 0.65) !important;
-
-    /* 2. 'currentColor' makes the border automatically match the text color above */
     border: 1px solid currentColor;
-
-    /* Layout styling */
     text-decoration: none;
     padding: 8px 16px;
     border-radius: 6px;
@@ -440,16 +390,9 @@ body {
 }
 
 .repo-btn:hover {
-    /* 3. On hover, turn text Cyber Blue */
     color: var(--cyber-blue) !important;
-
-    /* 4. Make it fully bright (100% opacity) */
     opacity: 1;
-
-    /* Add a subtle glow for that cyber feel */
     box-shadow: 0 0 15px rgba(58, 152, 255, 0.4);
-
-    /* Ensure background stays clear */
     background-color: transparent;
 }
 
@@ -457,14 +400,13 @@ body {
     color: var(--cyber-blue);
 }
 
-
 /* --- SKILLS SECTION --- */
+
 .skills-section {
-    background-color: #000; /* Pitch black to contrast with previous section */
+    background-color: #000;
     padding-top: 150px;
 }
 
-/* 1. Core Skills Pills */
 .skills-grid {
     display: flex;
     flex-wrap: wrap;
@@ -472,11 +414,12 @@ body {
 }
 
 .skill-pill {
+
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid #333;
     color: #e0e0e0;
     padding: 10px 20px;
-    border-radius: 50px; /* Fully rounded */
+    border-radius: 50px;
     font-size: 1rem;
     font-weight: 500;
     transition: all 0.3s ease;
@@ -485,22 +428,21 @@ body {
 
 .skill-pill i {
     margin-right: 8px;
-    color: var(--cyber-blue); /* Your blue accent */
+    color: var(--cyber-blue);
 }
 
 .skill-pill:hover {
     background: var(--cyber-blue);
-    color: #000; /* Text turns black */
+    color: #000;
     border-color: var(--cyber-blue);
     transform: translateY(-3px);
     box-shadow: 0 0 15px rgba(58, 152, 255, 0.4);
 }
 
 .skill-pill:hover i {
-    color: #000; /* Icon turns black on hover */
+    color: #000;
 }
 
-/* 2. Learning Cards */
 .learning-card {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid #333;
@@ -512,11 +454,8 @@ body {
     background-color: #222;
 }
 
-
-/* --- CONTACT SECTION --- */
 .contact-section {
     background: linear-gradient(0deg, #0a0a0a 0%, #1a1a1a 100%);
-    /* Make this section shorter than full screen if you prefer, or keep 100vh */
     min-height: 70vh !important;
 }
 
@@ -540,4 +479,193 @@ body {
     color: #000;
     transform: translateY(-5px) scale(1.1);
     box-shadow: 0 0 20px rgba(58, 152, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .project-card {
+        min-height: auto;
+    }
+    .card-image {
+        height: 180px;
+    }
+    .card-content {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        padding: 100px 15px 50px 15px;
+    }
+    .about-photo img {
+        max-width: 70%;
+        margin-top: 30px;
+    }
+    .about-text {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar {
+        padding: 0 10px !important;
+    }
+    .logo {
+        height: 60px;
+    }
+    .Welcome {
+        display: inline-block !important;
+        font-size: 18px;
+        margin: 0 10px;
+        opacity: 65%;
+    }
+    .githubLogo,
+    .linkedinLogo {
+        font-size: 24px;
+        margin-right: 5px;
+    }
+}
+
+@media (max-width: 992px) {
+    .scroll-nav {
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .navbar .githubLogo,
+    .navbar .linkedinLogo {
+        display: none;
+    }
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 10px 2rem;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+
+.navbar .brand,
+.navbar .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+
+.navbar nav,
+.navbar .nav-links,
+.navbar ul {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.navbar nav a,
+.navbar .nav-links a,
+.navbar ul a {
+    padding: 8px 12px;
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.navbar .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.6rem;
+    cursor: pointer;
+    padding: 6px;
+}
+
+
+.navbar .githubLogo,
+.navbar .linkedinLogo {
+    font-size: 28px;
+    margin-right: 12px;
+}
+
+@media (max-width: 992px) {
+    .navbar {
+        padding: 8px 1rem;
+    }
+
+    .navbar .githubLogo,
+    .navbar .linkedinLogo {
+        font-size: 26px;
+        margin-right: 8px;
+    }
+
+    .navbar nav,
+    .navbar .nav-links,
+    .navbar ul {
+        gap: 0.6rem;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 8px 0.75rem;
+    }
+
+    .logo {
+        height: 60px !important;
+    }
+
+    .Welcome {
+        display: inline-block !important;
+        font-size: 18px;
+        margin: 0 10px;
+        opacity: 65%;
+    }
+
+    .navbar .githubLogo,
+    .navbar .linkedinLogo {
+        display: none;
+    }
+
+    .navbar nav,
+    .navbar .nav-links,
+    .navbar ul {
+        display: none;
+    }
+
+    .navbar .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+@media (max-width: 576px) {
+    .navbar {
+        padding: 6px 0.5rem;
+    }
+
+    .logo {
+        height: 50px !important;
+    }
+
+    .navbar .githubLogo,
+    .navbar .linkedinLogo {
+        display: none;
+    }
 }
