@@ -3,19 +3,27 @@ const projects = [
     {
         title: "Portfolio Website",
         description: "A responsive, dark-themed portfolio built with clean HTML/CSS and vanilla JavaScript for performance.",
-        techStack: ["HTML5", "CSS3", "JavaScript"],
-        // Use your own screenshot here!
-        image: "img/portfolio-preview.jpg",
-        repoLink: "https://github.com/alessiomic/portfolio",
-        liveLink: "https://alessiomic.github.io/portfolio" // Optional
+        techStack: ["HTML5 |", "CSS3 |", "JavaScript"],
+        image: "img/portfolio_scrsh.png",
+        repoLink: "https://github.com/AM1407/Portfolio",
     },
     {
-        title: "Task Manager App",
-        description: "A CRUD application to organize daily tasks. Features local storage and category filtering.",
-        techStack: ["Angular", "TypeScript", "Bootstrap"],
-        image: "img/task-manager.jpg", // Placeholder
-        repoLink: "https://github.com/alessiomic/task-manager",
-        liveLink: "" // Leave empty if you don't have a live link yet
+        title: "Santa Claus' Webshop",
+        description: "A typescript webshop project with Vite imitating an e-commerce site for Santa Claus' gifts. " +
+            "Because of JSON server usage does the live link not work without setting up a JSON and vite server locally."
+            ,
+        techStack: ["Vite |", "TypeScript |", "Bootstrap"],
+        image: "img/SW_scrsh.png", // Placeholder
+        repoLink: "https://github.com/AM1407/SantaWebshop",
+        liveLink: "https://am1407.github.io/SantaWebshop/" // Leave empty if you don't have a live link yet
+    },
+    {
+        title: "Chinese Zodiac App",
+        description: "A simple web application that determines your Chinese Zodiac sign based on your birth year.",
+        techStack: ["CSS3 |", "Javascript |", "Bootstrap"],
+        image: "img/zodiac_scrsh.png", // Placeholder
+        repoLink: "https://github.com/AM1407/Chinese-zodiac-app",
+        liveLink: "https://am1407.github.io/Chinese-zodiac-app/"
     }
 ];
 
@@ -29,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         projects.forEach(project => {
             // 1. Create the Tech Stack HTML
             const techHtml = project.techStack
-                .map(tech => `<span>${tech}</span>`)
+                .map(tech => `<span class="techStack">${tech}  </span>`)
                 .join('');
 
             // 2. Logic: Only show the "Live Demo" button if a link exists

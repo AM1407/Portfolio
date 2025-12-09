@@ -272,18 +272,28 @@ body {
 }
 
 
-/* --- UPDATED PROJECT CARD STYLES --- */
+/* --- UPDATED PROJECT CARD STYLES (SQUARE LOOK) --- */
+
+.projects-grid {
+    display: grid;
+    /* Keeps cards nice and wide/boxy */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
 
 /* 1. The Container */
 .project-card {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid #333;
     border-radius: 16px;
-    overflow: hidden; /* Ensures image doesn't poke out corners */
+    overflow: hidden;
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
     height: 100%;
+    /* Optional: Sets a minimum height to force a vertical rectangle shape */
+    min-height: 500px;
 }
 
 .project-card:hover {
@@ -292,18 +302,23 @@ body {
     box-shadow: 0 5px 15px rgba(58, 152, 255, 0.15);
 }
 
-/* 2. The Image Area */
+/* 2. The Image Area (The Key Change) */
 .card-image {
     width: 100%;
-    height: 180px; /* Fixed height for uniformity */
+    /* Increased from 180px to 250px for a "Monitor" aspect ratio */
+    height: 250px;
     overflow: hidden;
     border-bottom: 1px solid #333;
+    background-color: #000; /* Fallback if image has transparency */
 }
 
 .card-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Zooms in to fill the box without squishing */
+    /* 'cover' fills the box. */
+    object-fit: cover;
+    /* 'top' ensures we see the Header/Nav of your screenshot, not the middle */
+    object-position: top center;
     transition: transform 0.5s ease;
 }
 
@@ -317,21 +332,23 @@ body {
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* Pushes content to fill space */
+    flex-grow: 1;
 }
 
 .card-content h3 {
     color: white;
-    font-size: 1.4rem;
+    opacity:65%;
+    font-size: 1.5rem;
+    font-weight: 700;
     margin-bottom: 0.5rem;
 }
 
 .card-content p {
     color: #b3b3b3;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    margin-bottom: 1rem;
-    flex-grow: 1; /* Ensures buttons stick to the bottom */
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
 }
 
 /* 4. The Buttons Container */
@@ -339,37 +356,93 @@ body {
     display: flex;
     gap: 1rem;
     margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.05); /* Subtle separator line */
 }
 
 /* Shared Button Styles */
 .project-btn {
     text-decoration: none;
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-size: 0.9rem;
+    padding: 10px 20px; /* Bigger touch target */
+    border-radius: 8px;
+    font-size: 1.1rem;
     font-weight: 600;
     transition: all 0.2s ease;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
+    flex: 1; /* Makes buttons equal width */
 }
 
 /* "Live Demo" Button Style */
 .live-btn {
-    background-color: var(--cyber-blue);
-    color: #000; /* Black text on blue stands out */
-}
-.live-btn:hover {
-    background-color: #fff; /* White on hover */
-    color: #000;
+    background-color: transparent;
+
+    /* 1. We use RGBA to handle the "White with 65% opacity" in one go */
+    color: rgba(255, 255, 255, 0.65) !important;
+
+    /* 2. 'currentColor' makes the border automatically match the text color above */
+    border: 1px solid currentColor;
+
+    /* Layout styling */
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
-/* "Code" Button Style */
-.repo-btn {
-    border: 1px solid #555;
-    color: #ccc;
+.live-btn:hover {
+    color: var(--cyber-blue) !important;
+
+    /* 4. Make it fully bright (100% opacity) */
+    opacity: 1;
+
+    /* Add a subtle glow for that cyber feel */
+    box-shadow: 0 0 15px rgba(58, 152, 255, 0.4);
+
+    /* Ensure background stays clear */
+    background-color: transparent;
 }
+
+    /* NEW - Triggers only on the image itself */
+.logo:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 15px rgba(58, 152, 255, 0.8));
+}
+
+.repo-btn {
+    background-color: transparent;
+
+    /* 1. We use RGBA to handle the "White with 65% opacity" in one go */
+    color: rgba(255, 255, 255, 0.65) !important;
+
+    /* 2. 'currentColor' makes the border automatically match the text color above */
+    border: 1px solid currentColor;
+
+    /* Layout styling */
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
 .repo-btn:hover {
-    border-color: #fff;
-    color: #fff;
+    /* 3. On hover, turn text Cyber Blue */
+    color: var(--cyber-blue) !important;
+
+    /* 4. Make it fully bright (100% opacity) */
+    opacity: 1;
+
+    /* Add a subtle glow for that cyber feel */
+    box-shadow: 0 0 15px rgba(58, 152, 255, 0.4);
+
+    /* Ensure background stays clear */
+    background-color: transparent;
+}
+
+.techStack{
+    color: var(--cyber-blue);
 }
