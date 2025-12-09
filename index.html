@@ -24,6 +24,8 @@
     <a href="#hero" class="dot active"></a>
     <a href="#about" class="dot"></a>
     <a href="#projects" class="dot"></a>
+    <a href="#skills" class="dot"></a>
+    <a href="#contact" class="dot"></a>
 </div>
 
 <!-- Navbar -->
@@ -83,13 +85,93 @@
 
     <section id="projects" class="projects-section d-flex align-items-center justify-content-center">
         <div class="container">
-            <div class="section-title text-center mb-5">
+            <div class="section-title text-center mb-5 text-white">
                 <h2 class="display-4 fw-bold">My Projects</h2>
                 <p class="lead text-secondary">A selection of my recent work.</p>
             </div>
 
             <div class="projects-grid" id="project-list"></div>
 
+        </div>
+    </section>
+
+    <!--Skills Section-->
+
+    <section id="skills" class="skills-section d-flex align-items-center">
+        <div class="container">
+            <div class="section-title text-center mb-5 text-white">
+                <h2 class="display-4 fw-bold">Arsenal</h2>
+                <p class="lead text-secondary">Technologies I use and what I'm learning next.</p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-7 mb-5">
+                    <h3 class="text-white mb-4"><i class="fa-solid fa-code text-primary me-2"></i> Core Stack</h3>
+                    <div class="skills-grid">
+                        <div class="skill-pill"><i class="fa-brands fa-angular"></i> Angular</div>
+                        <div class="skill-pill"><i class="fa-brands fa-js"></i> JavaScript</div>
+                        <div class="skill-pill"><i class="fa-brands fa-html5"></i> HTML5</div>
+                        <div class="skill-pill"><i class="fa-brands fa-css3-alt"></i> CSS3</div>
+                        <div class="skill-pill"><i class="fa-brands fa-node-js"></i> Node.js</div>
+                        <div class="skill-pill"><i class="fa-brands fa-python"></i> Python</div>
+                        <div class="skill-pill"><i class="fa-brands fa-git-alt"></i> Git</div>
+                        <div class="skill-pill"><i class="fa-solid fa-database"></i> SQL</div>
+                    </div>
+                </div>
+
+                <div class="col-md-5">
+                    <h3 class="text-white mb-4"><i class="fa-solid fa-graduation-cap text-primary me-2"></i> In Progress</h3>
+
+                    <div class="learning-card">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="fw-bold text-white"><i class="fa-solid fa-terminal me-2"></i> COBOL</span>
+                            <span class="badge bg-warning text-dark">Udemy</span>
+                        </div>
+                        <div class="progress" style="height: 6px;">
+                            <div class="progress-bar bg-warning" role="progressbar" style="width: 0%;"></div>
+                        </div>
+                        <small class="text-secondary mt-1 d-block">Legacy Systems & Mainframe</small>
+                    </div>
+
+                    <div class="learning-card mt-3">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="fw-bold text-white"><i class="fa-solid fa-shield-halved me-2"></i> Cybersecurity</span>
+                            <span class="badge bg-info text-dark">Udemy</span>
+                        </div>
+                        <div class="progress" style="height: 6px;">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 10%;"></div>
+                        </div>
+                        <small class="text-secondary mt-1 d-block">Network Security & Ethical Hacking</small>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Footer / Contact Section-->
+    <section id="contact" class="contact-section d-flex align-items-center justify-content-center text-center">
+        <div class="container">
+            <h2 class="display-4 fw-bold text-white mb-4">Let's Connect</h2>
+            <p class="lead text-secondary mb-5">
+                I'm currently looking for internships and junior opportunities.<br>
+                Check out my code or connect with me professionally.
+            </p>
+
+            <div class="d-flex justify-content-center gap-4">
+                <a href="https://github.com/yourusername" target="_blank" class="social-btn">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank" class="social-btn">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="mailto:alessiomicciche@outlook.com" class="social-btn">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+
+            <footer class="mt-5 text-secondary">
+                <small>&copy; 2025 Alessio Micciche. Clean code. Secure architecture.</small>
+            </footer>
         </div>
     </section>
 

@@ -24,6 +24,30 @@ const projects = [
         image: "img/zodiac_scrsh.png", // Placeholder
         repoLink: "https://github.com/AM1407/Chinese-zodiac-app",
         liveLink: "https://am1407.github.io/Chinese-zodiac-app/"
+    },
+    {
+        title: "Contact Manager App",
+        description: "A simple JS application to save contact information ",
+        techStack: ["CSS3 |", "Javascript |", "Bootstrap"],
+        image: "img/contact_form.png", // Placeholder
+        repoLink: "https://github.com/AM1407/Simple-contacts-form",
+        liveLink: "https://am1407.github.io/Simple-contacts-form/"
+    },
+    {
+        title: "Farm Yield Tracker",
+        description: "A JS application with JSON integration to track and save farm yields in local storage and a .json file." +
+            "The mock API is created with a JSON server and won't run on Github Pages. Instructions are in the repo.",
+        techStack: ["CSS3 |", "Javascript |", "Bootstrap |", "JSON"],
+        image: "img/farm_yield.png", // Placeholder
+        repoLink: "https://github.com/AM1407/farm-yield-tracker",
+        liveLink: "https://am1407.github.io/farm-yield-tracker/"
+    },
+    {
+        title: "Vampire Weather App",
+        description: "A school project that uses an external weather API to fetch and display weather data.",
+        techStack: ["CSS3 |", "Javascript |", "API Integration"],
+        image: "img/weather_app.png", // Placeholder
+        repoLink: "https://github.com/AM1407/VampireWeatherApp",
     }
 ];
 
