@@ -40,40 +40,94 @@ body {
 
 /* --- NAVBAR --- */
 
-.navbar{
+.navbar {
     background-color: #111;
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
     margin: 0;
-    padding: 0;
+    padding: 10px 2rem;
+
+    /* 1. Fix position */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    /* 2. Flex settings */
+    display: flex;
+    align-items: center;
+    /* REMOVED 'justify-content: space-between' to stop centering the github logo */
 }
 
-.logo-placeholder{
-    width: 150px;
-    height: 1px;
+.logo-placeholder {
+    display: none;
 }
 
-.logo{
+.logo {
     width: auto;
     height: 85px;
     zoom: 90%;
     margin-top: 5px;
-    margin-right: 25px;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 20;
 }
 
 .logo:hover {
     filter: drop-shadow(0 0 8px rgba(58, 152, 255, 0.5));
-    transition: filter 0.3s ease;
+    transform: scale(1.1);
 }
 
-.Welcome{
+/* 3. CENTERED TITLE */
+.Welcome {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
     font-size: 30px;
     color: white;
     opacity: 65%;
+    white-space: nowrap;
 
-    .fas {
-        color: var(--cyber-blue);
-        margin-right: 10px;
-    }
+    pointer-events: none; /* Allows clicking through text */
+    z-index: 10;
+}
+
+.Welcome .fas {
+    color: var(--cyber-blue);
+    margin-right: 10px;
+}
+
+/* 4. THE MAGIC FIX FOR ICONS */
+.githubLogo {
+    font-size: 35px;
+    position: relative;
+    z-index: 20;
+
+    /* This "Spring" pushes the GitHub logo (and LinkedIn) to the far right */
+    margin-left: auto;
+    margin-right: 20px; /* Space between GitHub and LinkedIn */
+}
+
+.linkedinLogo {
+    font-size: 35px;
+    position: relative;
+    z-index: 20;
+    margin-right: 0;
+}
+
+.githubLogo a,
+.linkedinLogo a {
+    color: white;
+    opacity: 65%;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.githubLogo a:hover,
+.linkedinLogo a:hover {
+    color: var(--cyber-blue);
+    transform: scale(1.2);
 }
 
 /* --- CONTENT POSITIONING & HERO --- */
@@ -669,3 +723,5 @@ body {
         display: none;
     }
 }
+
+
