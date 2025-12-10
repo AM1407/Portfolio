@@ -724,4 +724,35 @@ body {
     }
 }
 
+/* --- FIX MOBILE SCROLLING --- */
+@media (max-width: 900px) {
+
+    /* 1. Disable the "Sticky" Scroll Snap */
+    html {
+        scroll-snap-type: none !important;
+        scroll-behavior: auto !important; /* Uses native touch momentum */
+        overflow-x: hidden; /* Prevents side-to-side wobble */
+    }
+
+    /* 2. Release Section Heights */
+    /* This stops the phone from trying to force content into exactly 1 screen height */
+    section {
+        height: auto !important;
+        min-height: auto !important;
+        scroll-snap-align: none !important;
+
+        /* Add breathing room since we aren't vertically centering anymore */
+        padding-top: 120px;
+        padding-bottom: 60px;
+    }
+
+    /* 3. Fix the Hero height */
+    /* We want the first screen to still look full, but allow scrolling past it easily */
+    .hero {
+        min-height: 80vh;
+        height: auto;
+        padding-top: 150px;
+    }
+}
+
 
