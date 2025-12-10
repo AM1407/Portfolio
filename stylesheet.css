@@ -749,9 +749,15 @@ body {
     /* 3. Fix the Hero height */
     /* We want the first screen to still look full, but allow scrolling past it easily */
     .hero {
-        min-height: 80vh;
         height: auto;
         padding-top: 150px;
+        padding-left: 25px;
+        padding-right: 25px;
+        padding-bottom: 50px;
+    }
+
+    .shieldIcon{
+        display: none !important;
     }
 }
 
