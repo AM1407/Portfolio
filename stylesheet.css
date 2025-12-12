@@ -759,6 +759,14 @@ body {
     .shieldIcon{
         display: none !important;
     }
+
+    .sponsor-btn{
+        width:100%;
+        margin-top: 10px;
+        font-size: 0.6rem;
+        padding: 8px 15px;
+        max-width: 200px;
+    }
 }
 
 
@@ -810,6 +818,14 @@ body {
 
 .sponsor-btn:hover .heart-icon {
     transform: scale(1.2); /* Heart beats on hover */
+}
+
+.btnContainer{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap:15px;
 }
 
 
