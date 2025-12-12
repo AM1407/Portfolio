@@ -762,3 +762,54 @@ body {
 }
 
 
+    /* --- SPONSOR BUTTON (CYBERPUNK STYLE) --- */
+
+.sponsor-btn {
+    /* 1. Base Shape & Size (Matches your .repo-btn) */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 8px; /* Smooth corners */
+
+    /* 2. Cyberpunk Colors (Transparent Dark) */
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid #333;
+    color: rgba(255, 255, 255, 0.8) !important;
+
+    /* 3. Typography */
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+
+    /* 4. Animation */
+    transition: all 0.3s ease;
+}
+
+.sponsor-btn .heart-icon {
+    fill: currentColor; /* Heart matches text color */
+    transition: transform 0.3s ease;
+}
+
+/* --- HOVER EFFECT --- */
+.sponsor-btn:hover {
+    /* OPTION A: Match your theme exactly (Blue) */
+    /* background: var(--cyber-blue); */
+    /* border-color: var(--cyber-blue); */
+    /* box-shadow: 0 0 15px rgba(58, 152, 255, 0.4); */
+
+    /* OPTION B: Sponsor Pink (Recommended for this specific button) */
+    background: #db61a2;
+    border-color: #db61a2;
+    box-shadow: 0 0 20px rgba(219, 97, 162, 0.6);
+
+    color: #000 !important; /* Black text on bright background */
+    transform: translateY(-3px);
+}
+
+.sponsor-btn:hover .heart-icon {
+    transform: scale(1.2); /* Heart beats on hover */
+}
+
+
