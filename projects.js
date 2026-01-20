@@ -1,11 +1,11 @@
 /* --- PROJECT DATA --- */
 const projects = [
     {
-        title: "Portfolio Website",
-        description: "A responsive, dark-themed portfolio built with clean HTML/CSS and vanilla JavaScript for performance.",
-        techStack: ["HTML5 |", "CSS3 |", "JavaScript"],
-        image: "img/portfolio_scrsh.png",
-        repoLink: "https://github.com/AM1407/Portfolio",
+        title: "KotCompass, Front-End School Project",
+        description: "An immobilien web application for students to find shared housing. A dashboard makes management easier for renter and landlord. ",
+        techStack: ["Angular |", "Laravel |", "MySQL |", "Stripe implementation"],
+        image: "img/kotcompass.png",
+        repoLink: "https://github.com/woutvanlommel/TheBuggyLandlords",
     },
     {
         title: "Santa Claus' Webshop",
@@ -26,12 +26,11 @@ const projects = [
         liveLink: "https://am1407.github.io/Chinese-zodiac-app/"
     },
     {
-        title: "Contact Manager App",
-        description: "A simple JS application to save contact information ",
-        techStack: ["CSS3 |", "Javascript |", "Bootstrap"],
-        image: "img/contact_form.png", // Placeholder
-        repoLink: "https://github.com/AM1407/Simple-contacts-form",
-        liveLink: "https://am1407.github.io/Simple-contacts-form/"
+        title: "Portfolio Website",
+        description: "A responsive, dark-themed portfolio built with clean HTML/CSS and vanilla JavaScript for performance.",
+        techStack: ["HTML5 |", "CSS3 |", "JavaScript"],
+        image: "img/portfolio_scrsh.png",
+        repoLink: "https://github.com/AM1407/Portfolio",
     },
     {
         title: "Farm Yield Tracker",
