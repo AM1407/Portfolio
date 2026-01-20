@@ -497,6 +497,17 @@ body {
     color: #000;
 }
 
+
+
+.skill-pill svg {
+    fill: currentColor; 
+    transition: color 0.2s ease-in-out;
+}
+
+.skill-pill:hover svg {
+    color: #000000 !important; 
+}
+
 .learning-card {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid #333;
@@ -827,5 +838,11 @@ body {
     justify-content: center;
     gap:15px;
 }
+ 
+.tailwind-logo{
+    color: var(--cyber-blue) !important; 
+    height: 22px;
+    width:auto; 
+} 
 
 
